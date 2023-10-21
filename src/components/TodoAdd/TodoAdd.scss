@@ -1,0 +1,41 @@
+@import '../../styles/variables';
+
+.todoAdd {
+  display: flex;
+  height: 40px;
+  margin: 0 16px;
+  width: 300px;
+
+  @media (min-width: $layout-breakpoint) {
+    width: 400px;
+  }
+
+  &-button {
+    height: 100%;
+
+    & > button {
+      width: 120px;
+      height: 100%;
+      background-color: $light-blue;
+      border: 2px solid black;
+      border-left: none;
+      color: $pale-yellow;
+      font-weight: 900;
+      cursor: pointer;
+
+      &:disabled {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  & > input {
+    flex: 1;
+    padding: 0 16px;
+    border-right: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

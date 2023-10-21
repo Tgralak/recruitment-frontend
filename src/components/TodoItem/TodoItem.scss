@@ -1,0 +1,91 @@
+@import '../../styles/variables';
+
+.todoItem {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  padding: 8px;
+  width: 300px;
+  background-color: $pale-yellow;
+  border: 2px solid #000;
+  box-shadow: 8px 8px 0 2px #000;
+  transition: all ease-in 0.1s;
+  opacity: 0.9;
+
+  @media (min-width: $layout-breakpoint) {
+    width: 500px;
+
+    &:hover {
+      transform: translate(8px, 8px);
+      box-shadow: none;
+      opacity: 1;
+    }
+  }
+
+  &-checkbox {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 6px;
+    top: 0;
+    width: 30px;
+    height: 100%;
+
+    > input {
+      width: 100%;
+      height: 100%;
+      accent-color: $light-blue;
+      cursor: pointer;
+    }
+  }
+
+  &-removeButton {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    outline: none;
+    color: $pale-yellow;
+    font-size: 18px;
+    font-weight: 900;
+    background-color: #fd6161;
+    cursor: pointer;
+    z-index: 1;
+
+    @media (min-width: $layout-breakpoint) {
+      right: 0;
+      top: 0;
+      width: 30px;
+      height: 100%;
+      transition: all ease-in 0.1s;
+      cursor: pointer;
+      opacity: 0.3;
+
+      &:hover {
+        opacity: 1;
+        width: 80px;
+      }
+    }
+  }
+
+  &-text {
+    inline-size: 100%;
+    width: 200px;
+    overflow-wrap: break-word;
+
+    @media (min-width: $layout-breakpoint) {
+      width: 400px;
+    }
+
+    > p {
+      margin: 8px 0;
+      cursor: default;
+    }
+  }
+
+  &-completed {
+    text-decoration: line-through;
+  }
+}
